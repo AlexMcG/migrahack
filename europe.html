@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Chicago MigraHack WebApp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="Team DePaul">
+
+		<style type="text/css">
+	    	body { padding-top: 60px; padding-bottom: 40px; }
+		</style>
+
+		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/js/tem.js"></script>
+
+		<script type="text/javascript">
+            $(function () {
+        $('#con1').highcharts({
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: 'Persons Obtaining Permanent Resident Status from Europe (2001-2009)'
+            },
+            subtitle: {
+                text: 'Hover over a column to view specific data. Click on countries in the legend to show/hide them.'
+            },
+            xAxis: {
+                categories: ['2001', '2002', '2002', '2003', '2004', '2005', '2006','2007','2008','2009'],
+                tickmarkPlacement: 'on',
+                title: {
+                    enabled: false
+                }
+            },credits: {
+            enabled: false
+        },
+            yAxis: {
+                title: {
+                    text: 'Percent'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'percent',
+                    lineColor: '#ffffff',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#ffffff'
+                    }
+                }
+            },
+            series: [{
+                name: 'Russia',
+                data: getDataByName('Russia', country),
+            }, {
+                name: 'Germany',
+                data: getDataByName('Germany', country),
+            }, {
+                name: 'United Kingdom',
+                data: getDataByName('United Kingdom', country),
+            }, {
+                name: 'France',
+                data: getDataByName('France', country),
+            }, {
+                name: 'Italy',
+                data: getDataByName('Italy', country),
+            },{
+                name: 'Spain',
+                data: getDataByName('Spain', country),
+            },{
+                name: 'Ukraine',
+                data: getDataByName('Ukraine', country),
+            },{
+                name: 'Poland',
+                data: getDataByName('Poland', country),
+            },{
+                name: 'Romania',
+                data: getDataByName('Romania', country),
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="assets/js/highcharts.js"></script>
+		<script type="text/javascript" src="assets/js/modules/exporting.js"></script>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="index.html">Chicago MigraHack WebApp</a>
+					<div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="index.html">Regional Breakdown</a></li>
+                            <li><p style="padding-left:30px; padding-right:10px;"class="navbar-text">Sort by:</p></li>
+                            <li><a href="africa.html">Africa</a></li>
+                            <li><a href="asia.html">Asia</a></li>
+                            <li class="active"><a href="europe.html">Europe</a></li>
+                            <li><a href="namerica.html">N. America</a></li>
+                            <li><a href="oceania.html">Oceania</a></li>
+                            <li><a href="samerica.html">S. America</a></li>
+                        </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12" style="background:orange">
+					   <div id="con1" style="min-width: 400px; height: 550px; margin: 0 auto"></div>
+				</div>
+<!-- 				<div class="span1">
+
+					<table class="table table-bordered table-striped">
+						<tr><td><button id="b4">Hide third category</button></td></tr><tr><td><button id="b5">Show third category</button></td></tr>
+					</table>
+
+				</div> -->
+			</div>
+		</div>
