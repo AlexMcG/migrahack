@@ -1,0 +1,35 @@
+	<body>
+		<script type="text/javascript">
+			$(window).load(function() {
+				var url = (document.URL).split("/");
+				var file = url[url.length - 1];
+				if (file == "") { file = "index.html"; }
+				var tag = document.getElementById(file);
+				tag.className = "active";
+			});
+		</script>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="/index.html">Chicago MigraHack WebApp</a>
+					<div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li id="index.html"><a href="/index.html">Regional Breakdown</a></li>
+                            <li><p style="padding-left:30px; padding-right:10px;"class="navbar-text">Sort by:</p></li>
+                            <li id="Africa.html"><a href="/regions/Africa.html">Africa</a></li>
+                            <li id="Asia.html"><a href="/regions/Asia.html">Asia</a></li>
+                            <li id="Europe.html"><a href="/regions/Europe.html">Europe</a></li>
+                            <li id="NorthAmerica.html"><a href="/regions/NorthAmerica.html">N. America</a></li>
+                            <li id="Oceania.html"><a href="/regions/Oceania.html">Oceania</a></li>
+                            <li id="SouthAmerica.html"><a href="/regions/SouthAmerica.html">S. America</a></li>
+                        </ul>
+                        <a class="pull-right" id="forkme_banner" href="https://github.com/cindablock/migrahack">Fork Me on GitHub</a>
+					</div>
+				</div>
+			</div>
+		</div>

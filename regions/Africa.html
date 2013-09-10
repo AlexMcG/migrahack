@@ -1,0 +1,80 @@
+
+		<script type="text/javascript" src="/assets/js/jquery.js"></script>
+		<script type="text/javascript" src="/assets/js/tem.js"></script>
+		<script type="text/javascript" src="/assets/js/highcharts.js"></script>
+		<script type="text/javascript" src="/assets/js/modules/exporting.js"></script>
+		<script type="text/javascript">
+            $(function () {
+        $('#con1').highcharts({
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: 'Persons Obtaining Permanent Resident Status from Africa (2001-2009)'
+            },
+            subtitle: {
+                text: 'Hover over a column to view specific data. Click on countries in the legend to show/hide them.'
+            },
+            xAxis: {
+                categories: ['2001', '2002', '2002', '2003', '2004', '2005', '2006','2007','2008','2009'],
+                tickmarkPlacement: 'on',
+                title: {
+                    enabled: false
+                }
+            },credits: {
+            enabled: false
+        },
+            yAxis: {
+                title: {
+                    text: 'Percent'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'percent',
+                    lineColor: '#ffffff',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#ffffff'
+                    }
+                }
+            },
+            series: [{
+                name: 'Nigeria',
+                data: getDataByName('Nigeria', country),
+            }, {
+                name: 'Ethiopia',
+                data: getDataByName('Ethiopia', country),
+            }, {
+                name: 'Egypt',
+                data: getDataByName('Egypt', country),
+            }, {
+                name: 'South Africa',
+                data: getDataByName('South Africa', country),
+            }, {
+                name: 'Tanzania',
+                data: getDataByName('Tanzania', country),
+            },{
+                name: 'Kenya',
+                data: getDataByName('Kenya', country),
+            },{
+                name: 'Algeria',
+                data: getDataByName('Algeria', country),
+            },{
+                name: 'Uganda',
+                data: getDataByName('Uganda', country),
+            },{
+                name: 'Sudan',
+                data: getDataByName('Sudan', country),
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
